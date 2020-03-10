@@ -12,7 +12,10 @@ import org.reflections.scanners.MethodAnnotationsScanner;
 public class Main {
     public static void main(String[] args) {
         // Find methods annotated with a command line argument
-        Reflections reflections = new Reflections("no.lindh.annotationsexample", new MethodAnnotationsScanner());
+        Reflections reflections = new Reflections(
+                "no.lindh.annotationsexample",
+                new MethodAnnotationsScanner()
+        );
         Set<Method> methods = reflections.getMethodsAnnotatedWith(CommandAnnotation.class);
         Map<String, Method> cmds = new HashMap<>();
 
